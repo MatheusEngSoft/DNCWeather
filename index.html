@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="style.css">
+  <title>DncWeather</title>
+  <script src="index.js"></script>
+</head>
+<body>
+  <header>
+    <div>
+      <p>DncWeather</p>
+    </div>
+    <div>
+      <p><a href="#div-cep">Endereços</a></p>
+      <p><a href="#prev-div">Previsão do Tempo</a></p>
+    </div>
+  </header>
+  <section>
+    <div class="container">
+      <div id="firstp">
+        <div>
+          <p>Descubra Mais com Precisão:<br>
+            Previsões do Tempo e Endereços<br>
+            em tempo real.</p>
+        </div>
+        <div>
+          <img src="/svg/temp.svg" alt="Temp">
+        </div>
+      </div>
+    </div>
+    <div>
+      <form>
+        <div>
+          <label for="primeiroNome">Primeiro Nome:</label>
+          <input type="text" id="primeiroNome" placeholder="Insira seu primeiro nome:">
+        </div>
+        <div>
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" placeholder="Insira seu e-mail">
+        </div>
+        <div>
+          <label for="cep">Digite o CEP:</label>
+          <input type="tel" id="cep" placeholder="Insira o CEP" required pattern="\d{5}-\d{3}">
+        </div>
+        <div>
+          <label for="latLong">Digite a latitude e longitude para saber a previsão:</label>
+          <div class="inputs-container">
+            <input type="text" id="latitude" placeholder="Latitude">
+            <input type="text" id="longitude" placeholder="Longitude">
+          </div>
+        </div>           
+        <div>
+          <button type="button" class="btn btn-primary" onclick="weaver()">Acessar</button>
+        </div>
+      </form>      
+    </div>
+    <div id="div-cep">
+      <p id="cep-inf">Resultado da busca por CEP: <span id="cepNum"><img src="/svg/location.svg" alt="Location"></span></p>
+      <div id="first-text" class="flex-container">
+        <p>Logradouro/nome</p>
+        <p>Bairro/Distrito</p>
+        <p>Localidade/UF</p>
+      </div>
+      <div id="second-text" class="flex-container">
+        <p id="localidade">...</p>
+        <p id="bairro">...</p>
+        <p id="uf">...</p>
+      </div>
+    </div>
+    <div id="prev-div">
+      <p id="prev-inf">Previsão do tempo na região: <span id="regiao"><img src="/svg/cloud.svg" alt="Cloud"></span></p>
+      <div id="prev-val">
+        <p>Previsão de tempo de acordo com a região: <span id="temperatura">...</span></p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>Termos de Uso | Política de Privacidade</p>
+  </footer>
+</body>
+</html>
