@@ -34,7 +34,7 @@
       </div>
     </div>
     <div>
-      <form action="https://api.sheetmonkey.io/form/pFYFxK1LMGtYgTM57SjSVD" method="post">
+      <form id="myForm">
         <div>
           <label for="primeiroNome">Primeiro Nome:</label>
           <input type="text" id="primeiroNome" placeholder="Insira seu primeiro nome:" name="Name" required>
@@ -55,8 +55,7 @@
           </div>
         </div>           
         <div>
-          <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
-          <input id="button" type="submit" value="Acessar" onclick="weaver()"/>
+          <input id="button" type="button" value="Acessar" onclick="weaver()"/>
         </div>
       </form>      
     </div>

@@ -3,6 +3,31 @@ function weaver() {
   let cep = document.querySelector('#cep').value;
   let latitude = document.querySelector('#latitude').value;
   let longitude = document.querySelector('#longitude').value;
+  let primeiroNome = document.querySelector('#primeiroNome').value;
+  let email = document.querySelector('#email').value;
+
+  // Criando um objeto FormData para enviar os dados
+  let formData = new FormData();
+  formData.append('Name', primeiroNome);
+  formData.append('Email', email);
+  formData.append('CEP', cep);
+  formData.append('Latitude', latitude);
+  formData.append('Longitude', longitude);
+  formData.append('Created', 'x-sheetmonkey-current-date-time');
+
+  // Envio assíncrono dos dados do formulário
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", "https://api.sheetmonkey.io/form/pFYFxK1LMGtYgTM57SjSVD", true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      // Lógica para lidar com a resposta do servidor, se necessário
+      console.log(xhr.responseText);
+    }
+  };
+  xhr.send(formData);
+
+  apiSearchCep();
+  apiSearchTemp();
 
  
   apiSearchCep();
