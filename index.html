@@ -34,28 +34,29 @@
       </div>
     </div>
     <div>
-      <form>
+      <form action="https://api.sheetmonkey.io/form/pFYFxK1LMGtYgTM57SjSVD" method="post">
         <div>
           <label for="primeiroNome">Primeiro Nome:</label>
-          <input type="text" id="primeiroNome" placeholder="Insira seu primeiro nome:">
+          <input type="text" id="primeiroNome" placeholder="Insira seu primeiro nome:" name="Name" required>
         </div>
         <div>
           <label for="email">E-mail:</label>
-          <input type="email" id="email" placeholder="Insira seu e-mail">
+          <input type="email" id="email" placeholder="Insira seu e-mail" name="Email" required>
         </div>
         <div>
           <label for="cep">Digite o CEP:</label>
-          <input type="tel" id="cep" placeholder="Insira o CEP" required pattern="\d{5}-\d{3}">
+          <input type="tel" id="cep" placeholder="Insira o CEP" pattern="\d{8}" maxlength="8" title="O CEP deve ter exatamente 8 dígitos" required>
         </div>
         <div>
           <label for="latLong">Digite a latitude e longitude para saber a previsão:</label>
           <div class="inputs-container">
-            <input type="text" id="latitude" placeholder="Latitude">
-            <input type="text" id="longitude" placeholder="Longitude">
+            <input type="text" id="latitude" placeholder="Latitude" required>
+            <input type="text" id="longitude" placeholder="Longitude" required>
           </div>
         </div>           
         <div>
-          <button type="button" class="btn btn-primary" onclick="weaver()">Acessar</button>
+          <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
+          <input id="button" type="submit" value="Acessar" onclick="weaver()"/>
         </div>
       </form>      
     </div>

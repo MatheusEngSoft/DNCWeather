@@ -1,15 +1,14 @@
 function weaver() {
   // Coletando os dados do input
-  let name = document.querySelector('#primeiroNome').value;
-  let email = document.querySelector('#email').value;
   let cep = document.querySelector('#cep').value;
   let latitude = document.querySelector('#latitude').value;
   let longitude = document.querySelector('#longitude').value;
 
-  // consumo da api viacep
+ 
   apiSearchCep();
   apiSearchTemp();
 
+  // consumo da api viacep
   function apiSearchCep() {
     fetch(`https://viacep.com.br/ws/${cep}/json/`)
       .then(response => {
@@ -23,10 +22,11 @@ function weaver() {
       })
       .then(response => {
         displayCepResult(response);
-        clearInputFields(); // Limpar os campos de input após a execução
+        clearInputFields();
       });
   }
 
+   // consumo da api open-meteo
   function apiSearchTemp() {
     fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`)
       .then(response => {
