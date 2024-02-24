@@ -8,9 +8,10 @@ header {
   align-items: center; /* Adicionado para centralizar verticalmente */
   justify-content: space-between;
   color: #FFFFFF;
+  width: 1608;
   height: 100px;
   background-color: #0C70F2;
-  padding: 0 20px; /* Adicionado espaçamento interno para evitar que o conteúdo encoste nas bordas */
+  padding: 20px;
 }
 
 header > div:first-child {
@@ -253,7 +254,7 @@ footer {
   align-items: center;
   background-color: #0C70F2;
   margin-top: 250px;
-  width: 100%;
+  width: 1608;
   height: 92px;
   padding: 30px;
 }

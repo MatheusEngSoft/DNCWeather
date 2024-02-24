@@ -29,11 +29,7 @@ function weaver() {
   apiSearchCep();
   apiSearchTemp();
 
- 
-  apiSearchCep();
-  apiSearchTemp();
-
-  // consumo da api viacep
+  // Consumo da api viacep
   function apiSearchCep() {
     fetch(`https://viacep.com.br/ws/${cep}/json/`)
       .then(response => {
@@ -51,7 +47,7 @@ function weaver() {
       });
   }
 
-   // consumo da api open-meteo
+   // Consumo da api open-meteo
   function apiSearchTemp() {
     fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`)
       .then(response => {
@@ -68,6 +64,7 @@ function weaver() {
       });
   }
 
+  // Fução para mostar os resultados na tela na parte do cep
   function displayCepResult(cepInfo) {
     document.querySelector('#cepNum').textContent = `${cepInfo.cep || 'N/A'}`;
     document.querySelector('#localidade').textContent = `${cepInfo.localidade || 'N/A'}`;
@@ -76,11 +73,13 @@ function weaver() {
     document.querySelector('#regiao').textContent = `${cepInfo.localidade || 'N/A'}`;
   }
 
+  // Fução para mostar os resultados na tela na parte da temperatura
   function displayTempResult(temperatureInfo) {
     const currentTemperature = temperatureInfo.current_weather ? temperatureInfo.current_weather.temperature : 'N/A';
     document.querySelector('#temperatura').textContent = `${currentTemperature} ºC`;
   }
 
+  // Função para limpar os inputs
   function clearInputFields() {
     document.querySelector('#primeiroNome').value = '';
     document.querySelector('#email').value = '';
